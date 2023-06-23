@@ -12,7 +12,7 @@ export default function HomePage({ navigation }) {
         </View>
 
         <View style={styles.logoContainer}>
-          <Image source={require('../../assets/images/Garden_logo.png')} style={styles.logo} />
+          <Image source={require('../../assets/images/gardener.png')} style={styles.logo} />
         </View>
 
         <View style={styles.buttonWrapper}>
