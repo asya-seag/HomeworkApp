@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
+    opacity: 0.9,
   },
   container: {
     flex: 1,
