@@ -6,11 +6,11 @@ export default function Welcome({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.header}>Welcome to the Mobile App +Masters</Text>
       <Text style={styles.textStyle}>My Plants</Text>
-      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('MyPlants')}>
+      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('My Plants')}>
         <Text style={styles.textStyle}>Go to My Plants!</Text>
       </TouchableOpacity>
       <Text style={styles.textStyle}>Wish List</Text>
-      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('WishList')}>
+      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Wish List')}>
         <Text style={styles.textStyle}>Go to Wish List!</Text>
       </TouchableOpacity>
     </View>

@@ -1,4 +1,14 @@
-import { Button, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import * as React from 'react';
+import MainContainer from './src/navigation/MainContainer';
+
+function App() {
+  return(
+    <MainContainer/>
+  );
+}
+
+export default App;
+/*import { Button, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'
 import HomePage from './src/screens/WelcomePage';
@@ -54,4 +64,4 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'black',
   },
-});
+});*/
