@@ -41,10 +41,17 @@ export default function MainContainer(){
                     },
                 })}
                 tabBarOptions={{
-                    activeTintColour: 'tomato',
-                    inactiveTintColour: 'grey',
-                    labelStyle: {paddingBottom: 10, fontSize: 10 },
-                    style: {padding: 10, height: 70}
+                    activeTintColor: '#577D86',
+                    inactiveTintColor: '#577D86',
+                    style: {
+                        backgroundColor: '#FFFFFF',
+                        padding: 10, 
+                        height: 70,
+                    },
+                    labelStyle: {
+                        paddingBottom: 10,
+                        fontSize: 10,
+                    },
                 }}
             >
                 <Tab.Screen name={HomePageName} component={HomePage}/>
