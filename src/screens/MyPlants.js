@@ -4,7 +4,7 @@ export default function MyPlants({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>My Plants</Text>
-      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Welcome')}>
+      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
         <Text style={styles.textStyle}>Go back!</Text>
       </TouchableOpacity>
     </View>
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#FEE440',
+    backgroundColor: '#009473',
     alignItems: 'center',
     justifyContent: 'center'
   },

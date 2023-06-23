@@ -1,8 +1,8 @@
 import { Button, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'
-import Welcome from './src/screens/Welcome';
-import HomePage from './src/screens/Home.js';
+import HomePage from './src/screens/WelcomePage';
+import About from './src/screens/About';
 import MyPlants from './src/screens/MyPlants';
 import WishList from './src/screens/WishList';
 
@@ -14,8 +14,8 @@ export default function App() {
   return (
     <NavigationContainer>
     <Stack.Navigator>
-    <Stack.Screen name="Home" component={HomePage}/>
-    <Stack.Screen name="Welcome" component={Welcome}/>
+    <Stack.Screen name="WelcomePage" component={HomePage}/>
+    <Stack.Screen name="About" component={About}/>
     <Stack.Screen name="MyPlants" component={MyPlants}/>
     <Stack.Screen name="WishList" component={WishList}/>
    </Stack.Navigator>
