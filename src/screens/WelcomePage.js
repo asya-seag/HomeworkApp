@@ -7,17 +7,17 @@ export default function HomePage({ navigation }) {
   return (
     <ImageBackground source={require('../../assets/images/Plant_app_background.png')} style={styles.backgroundImage}>
       <View style={styles.container}>
-        <View style={styles.titleContainer}>
+        <View style={styles.iconContainer}>
+          <Image source={require('../../assets/images/gardener.png')} style={styles.icon} />
+        </View>
+
+        <View style={styles.headerContainer}>
           <Text style={styles.title}>Welcome to My Garden app!</Text>
         </View>
 
-        <View style={styles.logoContainer}>
-          <Image source={require('../../assets/images/Garden_logo.png')} style={styles.logo} />
-        </View>
-
         <View style={styles.buttonWrapper}>
-          <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Welcome')}>
-            <Text style={styles.buttonText}>Tap to Open the Home Page</Text>
+          <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
+            <Text style={styles.buttonText}>Tap to Open the About page</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -36,23 +36,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  titleContainer: {
-    position: 'absolute',
-    top: 20,
-    left: 20,
+  iconContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  icon: {
+    width: 50,
+    height: 50,
+  },
+  headerContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-  },
-  logoContainer: {
-    position: 'absolute',
-    top: 20,
-    right: 20,
-  },
-  logo: {
-    width: 95,
-    height: 95,
+    color:'black'
   },
   buttonWrapper: {
     marginBottom: 10,
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 50,
     borderRadius: 10,
-    backgroundColor: '#009473', 
+    backgroundColor: '#577D86',
     justifyContent: 'center',
     alignItems: 'center',
   },

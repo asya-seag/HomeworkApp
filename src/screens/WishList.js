@@ -4,7 +4,7 @@ export default function WishList({ navigation }) {
     return (
       <View style={styles.container}>
         <Text style={styles.textStyle}>Wish List</Text>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Welcome')}>
+        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
           <Text style={styles.textStyle}>Go to home page!</Text>
         </TouchableOpacity>
       </View>
@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#FEE440',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center'
   },
   buttonStyle: {
-    backgroundColor: '#F62D14',
+    backgroundColor: '#577D86',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
