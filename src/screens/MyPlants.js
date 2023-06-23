@@ -22,7 +22,7 @@ export default function MyPlants({ navigation }) {
       <View style={styles.searchContainer}>
           <SearchBar
             platform="default"
-            placeholder="Type query here..."
+            placeholder="Enter the plant name.."
             onChangeText={handleSearch}
             value={searchValue}
             inputStyle={styles.searchInput}
@@ -82,23 +82,23 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'relative', // Add position: 'relative' to the container
+    position: 'relative', 
   },
   searchContainer: {
-    position: 'absolute', // Use absolute positioning for the search container
-    top: 0, // Position it at the top
-    width: '100%', // Take up the full width
-    alignItems: 'center', // Center the search bar horizontally
+    position: 'absolute', 
+    top: 5, 
+    width: '100%', 
+    alignItems: 'center', 
     marginTop: 20,
     marginBottom: 10,
   },
   searchBarContainer: {
     backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderColor: '#CCCCCC',
+    borderWidth: 2,
+    borderColor: '#577D86',
     borderRadius: 5,
     paddingHorizontal: 10,
-    width: '90%', // Adjust the width as needed
+    width: '90%', 
   },
   searchInput: {
     paddingVertical: 8,
