@@ -19,7 +19,7 @@ export default function Welcome({ navigation }) {
           <Text style={styles.textStyle}>Go to Wish List!</Text>
         </TouchableOpacity>
       </View>
-      </ImageBackground>
+    </ImageBackground>
   );
 }
 
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   backgroundImageStyle: {
     flex: 1,
-    opacity: 0.4, // Adjust the opacity if needed
+    opacity: 0.4, 
   },
   container: {
     flex: 1,
@@ -39,9 +39,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   contentContainer: {
-    margin: 20, // Adjust the margin to control the background size
-    backgroundColor: '#FFFFFF', // Set the background color to transparent
-    borderRadius: 10, // Add border radius for rounded corners
+    margin: 20,
+    backgroundColor: '#FFFFFF', 
+    borderRadius: 10, 
     justifyContent: 'center',
     alignItems: 'center',
   },
