@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { ImageBackground } from 'react-native';
 
 
+
+
 export default function WishList({ navigation }) {
     return (
       <ImageBackground
@@ -9,6 +11,7 @@ export default function WishList({ navigation }) {
       style={styles.backgroundImage}
       imageStyle={styles.backgroundImageStyle}
       >
+        
         <View style={styles.container}>
           <Text style={styles.textStyle}>Wish List</Text>
           <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
