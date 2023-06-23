@@ -1,27 +1,51 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { ImageBackground } from 'react-native';
+
 
 export default function MyPlants({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>My Plants</Text>
-      <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
-        <Text style={styles.textStyle}>Go back!</Text>
-      </TouchableOpacity>
-    </View>
+    <ImageBackground
+    source={require('../../assets/images/Plant_app_background.png')}
+    style={styles.backgroundImage}
+    imageStyle={styles.backgroundImageStyle}
+    >
+      <View style={styles.container}>
+        <Text style={styles.textStyle}>My Plants</Text>
+        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
+          <Text style={styles.textStyle}>Go back!</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center'
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+  backgroundImageStyle: {
+    flex: 1,
+    opacity: 0.4, 
   },
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+  },
+  contentContainer: {
+    margin: 20,
+    backgroundColor: '#FFFFFF', 
+    borderRadius: 10, 
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: 'black'
   },
   buttonStyle: {
     backgroundColor: '#577D86',

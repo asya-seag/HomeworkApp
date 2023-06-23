@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { ImageBackground } from 'react-native';
+import { Image } from 'react-native-elements';
 
 export default function Welcome({ navigation }) {
   return (
@@ -8,9 +9,17 @@ export default function Welcome({ navigation }) {
       style={styles.backgroundImage}
       imageStyle={styles.backgroundImageStyle}
     >
+      <View style={styles.iconContainer}>
+        <Image source={require('../../assets/images/gardener.png')} style={styles.icon}/>
+      </View>
       <View style={styles.container}>
-        <Text style={styles.header}>Welcome to the Mobile App +Masters</Text>
-        <Text style={styles.textStyle}>My Plants</Text>
+        <View style={styles.panel}>
+          <Text style={styles.header}>I created this app because I'm a keen gardener and it is something I would find useful myself. I would like to expand its functionality so the user can search plants API,
+          add plants to My Plants page, to have easy to find information about the plants they already have and Wish List is supposed
+          to be like a notes page, where user could add names of plants maybe with short notes on what exactly they are.</Text>
+         
+        </View> 
+          <Text style={styles.textStyle}>My Plants</Text>
         <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('My Plants')}>
           <Text style={styles.textStyle}>Go to My Plants!</Text>
         </TouchableOpacity>
@@ -24,6 +33,15 @@ export default function Welcome({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  iconContainer: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+  },
+  icon: {
+    width: 60,
+    height: 60,
+  },
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
@@ -46,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
     color: 'black'
@@ -64,8 +82,14 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
     lineHeight: 21,
-    fontWeight: 'normal',
+    fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'black',
+  },
+  panel: {
+    backgroundColor: '#FFFFFF',
+    padding: 20,
+    borderRadius: 10,
+    margin: 10,
   },
 });
