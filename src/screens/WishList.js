@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#009473',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center'
   },
   buttonStyle: {
-    backgroundColor: '#F62D14',
+    backgroundColor: '#577D86',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
