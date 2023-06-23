@@ -17,16 +17,7 @@ export default function Welcome({ navigation }) {
           <Text style={styles.header}>I created this app because I'm a keen gardener and it is something I would find useful myself. I would like to expand its functionality so the user can search plants API,
           add plants to My Plants page, to have easy to find information about the plants they already have and Wish List is supposed
           to be like a notes page, where user could add names of plants maybe with short notes on what exactly they are.</Text>
-         
-        </View> 
-          <Text style={styles.textStyle}>My Plants</Text>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('My Plants')}>
-          <Text style={styles.textStyle}>Go to My Plants!</Text>
-        </TouchableOpacity>
-          <Text style={styles.textStyle}>Wish List</Text>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Wish List')}>
-          <Text style={styles.textStyle}>Go to Wish List!</Text>
-        </TouchableOpacity>
+        </View>
       </View>
     </ImageBackground>
   );
