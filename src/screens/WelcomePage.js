@@ -11,9 +11,12 @@ export default function HomePage({ navigation }) {
           <Image source={require('../../assets/images/gardener.png')} style={styles.icon} />
         </View>
 
-        <View style={styles.headerContainer}>
-          <Text style={styles.title}>Welcome to My Garden app!</Text>
+        <View style={styles.panel}>
+          <View style={styles.headerContainer}>
+            <Text style={styles.title}>Welcome to My Garden app!</Text>
+          </View>
         </View>
+
 
         <View style={styles.buttonWrapper}>
           <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('About')}>
@@ -26,10 +29,17 @@ export default function HomePage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  panel: {
+    backgroundColor: '#FFFFFF',
+    padding: 30,
+    borderRadius: 10,
+    margin: 10,
+  },
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
+    opacity: 0.9,
   },
   container: {
     flex: 1,
@@ -41,8 +51,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   icon: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
   },
   headerContainer: {
     alignItems: 'center',

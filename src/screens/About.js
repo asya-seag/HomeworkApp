@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { ImageBackground } from 'react-native';
+import { Image } from 'react-native-elements';
 
 export default function Welcome({ navigation }) {
   return (
@@ -8,22 +9,30 @@ export default function Welcome({ navigation }) {
       style={styles.backgroundImage}
       imageStyle={styles.backgroundImageStyle}
     >
-      <View style={styles.container}>
-        <Text style={styles.header}>Welcome to the Mobile App +Masters</Text>
-        <Text style={styles.textStyle}>My Plants</Text>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('My Plants')}>
-          <Text style={styles.textStyle}>Go to My Plants!</Text>
-        </TouchableOpacity>
-          <Text style={styles.textStyle}>Wish List</Text>
-        <TouchableOpacity style={styles.buttonStyle} onPress={() => navigation.navigate('Wish List')}>
-          <Text style={styles.textStyle}>Go to Wish List!</Text>
-        </TouchableOpacity>
+      <View style={styles.iconContainer}>
+        <Image source={require('../../assets/images/gardener.png')} style={styles.icon}/>
       </View>
-      </ImageBackground>
+      <View style={styles.container}>
+        <View style={styles.panel}>
+          <Text style={styles.header}>I created this app because I'm a keen gardener and it is something I would find useful myself. I would like to expand its functionality so the user can search plants API,
+          add plants to My Plants page, to have easy to find information about the plants they already have and Wish List is supposed
+          to be like a notes page, where user could add names of plants maybe with short notes on what exactly they are.</Text>
+        </View>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  iconContainer: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+  },
+  icon: {
+    width: 60,
+    height: 60,
+  },
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
@@ -31,7 +40,7 @@ const styles = StyleSheet.create({
   },
   backgroundImageStyle: {
     flex: 1,
-    opacity: 0.4, // Adjust the opacity if needed
+    opacity: 0.4, 
   },
   container: {
     flex: 1,
@@ -39,14 +48,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   contentContainer: {
-    margin: 20, // Adjust the margin to control the background size
-    backgroundColor: '#FFFFFF', // Set the background color to transparent
-    borderRadius: 10, // Add border radius for rounded corners
+    margin: 20,
+    backgroundColor: '#FFFFFF', 
+    borderRadius: 10, 
     justifyContent: 'center',
     alignItems: 'center',
   },
   header: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
     color: 'black'
@@ -64,8 +73,14 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
     lineHeight: 21,
-    fontWeight: 'normal',
+    fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'black',
+  },
+  panel: {
+    backgroundColor: '#FFFFFF',
+    padding: 20,
+    borderRadius: 10,
+    margin: 10,
   },
 });
