@@ -1,37 +1,80 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { ImageBackground } from 'react-native';
-import { SearchBar } from '@rneui/themed';
 import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { SearchBar } from 'react-native-elements';
+import axios from 'axios';
+import { ACCESS_KEY } from '../../env.js';
 
 
 export default function MyPlants({ navigation }) {
   const [searchValue, setSearchValue] = useState('');
+  const [plantInfo, setPlantInfo] = useState(null);
+  const [error, setError] = useState(null);
 
-  const handleSearch = (value) => {
+  const handleSearch = async (value) => {
     setSearchValue(value);
-    // Search logic to be added later
+
+    try {
+      const response = await axios.get('https://perenual.com/api/species/details', {
+        params: {
+          page: 1,
+          key: ACCESS_KEY,
+          common_name: value,   
+        },
+      });
+
+      const data = response.data;
+
+      if (!data) {
+        setError('No plant information found');
+        setPlantInfo(null);
+        return;
+      }
+
+      const plantData = {
+        commonName: data.common_name,
+        scientificName: data.scientific_name,
+        watering: data.watering,
+        propagation: data.propagation,
+        hardiness: data.hardiness,
+      };
+
+      setPlantInfo(plantData);
+    } catch (error) {
+      console.error('Error fetching plant information:', error);
+    }
   };
 
   return (
     <ImageBackground
-    source={require('../../assets/images/Plant_app_background.png')}
-    style={styles.backgroundImage}
-    imageStyle={styles.backgroundImageStyle}
+      source={require('../../assets/images/Plant_app_background.png')}
+      style={styles.backgroundImage}
+      imageStyle={styles.backgroundImageStyle}
     >
-
       <View style={styles.searchContainer}>
-          <SearchBar
-            platform="default"
-            placeholder="Enter the plant name.."
-            onChangeText={handleSearch}
-            value={searchValue}
-            inputStyle={styles.searchInput}
-            containerStyle={styles.searchBarContainer}
-          />
+        <SearchBar
+          platform="default"
+          placeholder="Enter the plant name.."
+          onChangeText={handleSearch}
+          value={searchValue}
+          inputStyle={styles.searchInput}
+          containerStyle={styles.searchBarContainer}
+        />
+      </View>
+
+      {/* Displaying plant info */}
+      {plantInfo && (
+        <View style={styles.plantInfoContainer}>
+          <Text style={styles.plantName}>Common name:{plantInfo.common_Name}</Text>
+          <Text style={styles.plantDescription}>Scientific name: {plantInfo.scientific_Name}</Text>
+          <Text style={styles.plantDescription}>Watering: {plantInfo.watering}</Text>
+          <Text style={styles.plantDescription}>Propagation: {plantInfo.propagation}</Text>
+          <Text style={styles.plantDescription}>Hardiness: {plantInfo.hardiness}</Text>
         </View>
+      )}
     </ImageBackground>
   );
 }
+
 
 const styles = StyleSheet.create({
   backgroundImage: {
@@ -41,54 +84,13 @@ const styles = StyleSheet.create({
   },
   backgroundImageStyle: {
     flex: 1,
-    opacity: 0.4, 
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  contentContainer: {
-    margin: 20,
-    backgroundColor: '#FFFFFF', 
-    borderRadius: 10, 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: 'black'
-  },
-  buttonStyle: {
-    backgroundColor: '#577D86',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-    margin: 10,
-  },
-  textStyle: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'normal',
-    letterSpacing: 0.25,
-    color: 'black',
-  },
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative', 
+    opacity: 0.4,
   },
   searchContainer: {
-    position: 'absolute', 
-    top: 5, 
-    width: '100%', 
-    alignItems: 'center', 
+    position: 'absolute',
+    top: 5,
+    width: '100%',
+    alignItems: 'center',
     marginTop: 20,
     marginBottom: 10,
   },
@@ -98,9 +100,24 @@ const styles = StyleSheet.create({
     borderColor: '#577D86',
     borderRadius: 5,
     paddingHorizontal: 10,
-    width: '90%', 
+    width: '90%',
   },
   searchInput: {
     paddingVertical: 8,
+  },
+  plantInfoContainer: {
+    marginTop: 80,
+    alignItems: 'center',
+  },
+  plantName: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: 'black',
+  },
+  plantDescription: {
+    fontSize: 16,
+    color: 'black',
+    marginBottom: 5,
   },
 });
