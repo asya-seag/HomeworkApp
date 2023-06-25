@@ -14,14 +14,13 @@ export default function MyPlants({ navigation }) {
     setSearchValue(value);
 
     try {
-      const response = await axios.get('https://perenual.com/api/species/details', {
-        params: {
-          page: 1,
-          key: ACCESS_KEY,
-          common_name: value,   
-        },
+      const response = await axios.get('https://plantwise.p.rapidapi.com/plant/', {
+        params: { plant_type: searchValue },
+        headers: {
+          'X-RapidAPI-Key': '682f9dd14dmsh11cf6f148d9eb7cp14ad40jsn73313bc91a85',
+          'X-RapidAPI-Host': 'plantwise.p.rapidapi.com'
+        }
       });
-
       const data = response.data;
 
       if (!data) {
