@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
 import React, { useState } from 'react';
 
 export default function WishList({ navigation }) {
@@ -31,11 +31,8 @@ export default function WishList({ navigation }) {
       style={styles.backgroundImage}
       imageStyle={styles.backgroundImageStyle}
     >
-     <ScrollView contentContainerStyle={styles.container}>
-
-        <Text style={styles.textStyle}>My Plants List</Text>
       <View style={styles.container}>
-        <Text style={styles.textStyle}>Wish List</Text>
+        <Text style={styles.textStyle}>My Plants</Text>
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -98,7 +95,6 @@ export default function WishList({ navigation }) {
           ))}
         </View>
       </View>
-      </ScrollView>
     </ImageBackground>
   );
 }
@@ -127,7 +123,7 @@ const styles = StyleSheet.create({
       letterSpacing: 0.25,
       color: 'black',
       marginBottom: 10,
-      marginTop:25,
+      marginTop:20
     },
     inputContainer: {
       flexDirection: 'row',
