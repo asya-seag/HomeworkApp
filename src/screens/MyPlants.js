@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import axios from 'axios';
-import { ACCESS_KEY } from '../../env.js';
+import { X_RapidAPI_Key, X_RapidAPI_Host } from '../../env.js';
+
 
 
 export default function MyPlants({ navigation }) {
@@ -17,8 +18,8 @@ export default function MyPlants({ navigation }) {
       const response = await axios.get('https://plantwise.p.rapidapi.com/plant/', {
         params: { plant_type: searchValue },
         headers: {
-          'X-RapidAPI-Key': '682f9dd14dmsh11cf6f148d9eb7cp14ad40jsn73313bc91a85',
-          'X-RapidAPI-Host': 'plantwise.p.rapidapi.com'
+          'X-RapidAPI-Key': X_RapidAPI_Key,
+          'X-RapidAPI-Host': X_RapidAPI_Host
         }
       });
       const data = response.data;

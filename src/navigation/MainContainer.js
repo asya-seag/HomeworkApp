@@ -8,11 +8,13 @@ import HomePage from '../screens/WelcomePage';
 import About from '../screens/About';
 import MyPlants from '../screens/MyPlants';
 import WishList from '../screens/WishList';
+import MyPlantsForm from '../screens/MyPlantsForm';
 
 const HomePageName ='Welcome Page';
 const AboutName ='About';
 const MyPlantsName ='My Plants';
 const WishListName ='Wish List';
+const MyPlantsFormName = "Form"
 
 const Tab = createBottomTabNavigator();
 
@@ -35,6 +37,8 @@ export default function MainContainer(){
                             iconName=focused ? 'leaf':'leaf-outline';
                         } else if (rn === WishListName){
                             iconName=focused ? 'heart':'heart-outline';
+                        } else if (rn === MyPlantsFormName){
+                            iconName=focused ? 'document-text':'document-text-outline';
                         }
 
                         return <Ionicons name={iconName} size={size} color={color}/>
@@ -58,6 +62,7 @@ export default function MainContainer(){
                 <Tab.Screen name={AboutName} component={About}/>
                 <Tab.Screen name={MyPlantsName} component={MyPlants}/>
                 <Tab.Screen name={WishListName} component={WishList}/>
+                <Tab.Screen name={MyPlantsFormName} component={MyPlantsForm}/>
 
             </Tab.Navigator>
         </NavigationContainer>
