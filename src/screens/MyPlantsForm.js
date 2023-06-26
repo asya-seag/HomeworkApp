@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
 import React, { useState } from 'react';
 
-export default function WishList({ navigation }) {
+export default function PlantList({ navigation }) {
   const [plants, setPlants] = useState([]);
   const [plantName, setPlantName] = useState('');
   const [location, setLocation] = useState('');

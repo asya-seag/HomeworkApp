@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   noteContainer: {
-    backgroundColor: '#FFFFFF',
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
