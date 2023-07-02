@@ -14,9 +14,7 @@ export default function Welcome({ navigation }) {
       </View>
       <View style={styles.container}>
         <View style={styles.panel}>
-          <Text style={styles.header}>I created this app because I'm a keen gardener and it is something I would find useful myself. I would like to expand its functionality so the user can search plants API,
-          add plants to My Plants page, to have easy to find information about the plants they already have and Wish List is supposed
-          to be like a notes page, where user could add names of plants maybe with short notes on what exactly they are.</Text>
+          <Text style={styles.header}>I created this app because I'm a keen gardener and it is something I would find useful myself. I tried to expand its functionality as much as I could within short framework of CFG Masters Mobile App development course. </Text>
         </View>
       </View>
     </ImageBackground>
@@ -40,47 +38,23 @@ const styles = StyleSheet.create({
   },
   backgroundImageStyle: {
     flex: 1,
-    opacity: 0.4, 
+    opacity: 0.4,
   },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  contentContainer: {
-    margin: 20,
-    backgroundColor: '#FFFFFF', 
-    borderRadius: 10, 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  header: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: 'black'
-  },
-  buttonStyle: {
-    backgroundColor: '#577D86',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-    margin: 10,
-  },
-  textStyle: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'black',
-  },
   panel: {
     backgroundColor: '#FFFFFF',
     padding: 20,
     borderRadius: 10,
     margin: 10,
+  },
+  header: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: 'black',
   },
 });
