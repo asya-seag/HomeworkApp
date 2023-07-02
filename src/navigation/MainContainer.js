@@ -10,6 +10,7 @@ import News from '../screens/News';
 import WishList from '../screens/WishList';
 import MyPlantsForm from '../screens/MyPlantsForm';
 import LoginScreen from '../screens/LoginScreen';
+import LogoutScreen from '../screens/LogoutScreen';
 
 const HomePageName = 'Welcome Page';
 const AboutName = 'About';
@@ -17,6 +18,7 @@ const NewsName = 'News';
 const WishListName = 'Wish List';
 const MyPlantsFormName = 'My plants';
 const LoginScreenName = 'Login';
+const LogoutScreenName = 'Logout';
 
 const Tab = createBottomTabNavigator();
 
@@ -47,8 +49,9 @@ export default function MainContainer() {
                 iconName = focused ? 'heart' : 'heart-outline';
               } else if (rn === MyPlantsFormName) {
                 iconName = focused ? 'document-text' : 'document-text-outline';
+              } else if (rn === LogoutScreenName) {
+                iconName = focused ? 'exit' : 'exit-outline';
               }
-
               return <Ionicons name={iconName} size={size} color={color} />;
             },
           })}
@@ -71,6 +74,7 @@ export default function MainContainer() {
           <Tab.Screen name={NewsName} component={News} />
           <Tab.Screen name={WishListName} component={WishList} />
           <Tab.Screen name={MyPlantsFormName} component={MyPlantsForm} />
+          <Tab.Screen name={LogoutScreenName} component={LogoutScreen} />
         </Tab.Navigator>
       ) : (
         <Tab.Navigator>
