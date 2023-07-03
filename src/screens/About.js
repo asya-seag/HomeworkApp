@@ -10,7 +10,7 @@ export default function Welcome({ navigation }) {
       imageStyle={styles.backgroundImageStyle}
     >
       <View style={styles.iconContainer}>
-        <Image source={require('../../assets/images/gardener.png')} style={styles.icon}/>
+        <Image source={require('../../assets/images/gardener.png')} style={styles.icon} />
       </View>
       <View style={styles.container}>
         <View style={styles.panel}>

@@ -102,74 +102,74 @@ export default function PlantList({ navigation }) {
 
 
 const styles = StyleSheet.create({
-    backgroundImage: {
-      flex: 1,
-      resizeMode: 'cover',
-      justifyContent: 'center',
-    },
-    backgroundImageStyle: {
-      flex: 1,
-      opacity: 0.4,
-    },
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    textStyle: {
-      fontSize: 22,
-      lineHeight: 21,
-      fontWeight: 'bold',
-      letterSpacing: 0.25,
-      color: 'black',
-      marginBottom: 10,
-      marginTop:20
-    },
-    inputContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginVertical: 15,
-    },
-    input: {
-      flex: 1,
-      borderWidth: 2,
-      borderColor: '#CCCCCC',
-      borderRadius: 5,
-      padding: 8,
-      marginRight: 10,
-      marginLeft: 10,
-    },
-    addButton: {
-      backgroundColor: '#577D86',
-      paddingVertical: 10,
-      paddingHorizontal: 20,
-      borderRadius: 5,
-    },
-    buttonText: {
-      color: '#FFFFFF',
-      fontSize: 16,
-      fontWeight: 'bold',
-    },
-    noteText: {
-      marginVertical: 5,
-      fontSize: 16,
-      fontWeight: 'normal',
-      color: 'black',
-    },
-    buttonStyle: {
-      backgroundColor: '#577D86',
-      paddingVertical: 7,
-      paddingHorizontal: 20,
-      borderRadius: 5,
-      color: '#FFFFFF',
-      fontSize: 16,
-      fontWeight: 'bold',
-      margin: 10,
-    },
-    noteContainer: {
-      backgroundColor: '#FFFFFF',
-      padding: 10,
-      borderRadius: 5,
-      marginBottom: 10,
-    },
-  });
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+  backgroundImageStyle: {
+    flex: 1,
+    opacity: 0.4,
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  textStyle: {
+    fontSize: 22,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'black',
+    marginBottom: 10,
+    marginTop: 20
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 15,
+  },
+  input: {
+    flex: 1,
+    borderWidth: 2,
+    borderColor: '#CCCCCC',
+    borderRadius: 5,
+    padding: 8,
+    marginRight: 10,
+    marginLeft: 10,
+  },
+  addButton: {
+    backgroundColor: '#577D86',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  noteText: {
+    marginVertical: 5,
+    fontSize: 16,
+    fontWeight: 'normal',
+    color: 'black',
+  },
+  buttonStyle: {
+    backgroundColor: '#577D86',
+    paddingVertical: 7,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    margin: 10,
+  },
+  noteContainer: {
+    backgroundColor: '#FFFFFF',
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 10,
+  },
+});
