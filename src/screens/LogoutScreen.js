@@ -12,7 +12,11 @@ const LogoutScreen = ({ navigation }) => {
     };
 
     return (
-        <ImageBackground source={require('../../assets/images/Plant_app_background.png')} style={styles.backgroundImage}>
+        <ImageBackground
+            source={require('../../assets/images/Plant_app_background.png')}
+            style={styles.backgroundImage}
+            imageStyle={styles.backgroundImageStyle}
+        >
             <View style={styles.container}>
                 <View style={styles.iconContainer}>
                     <Image source={require('../../assets/images/gardener.png')} style={styles.icon} />
@@ -46,6 +50,10 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: 'cover',
         justifyContent: 'center',
+    },
+    backgroundImageStyle: {
+        flex: 1,
+        opacity: 0.4,
     },
     container: {
         flex: 1,

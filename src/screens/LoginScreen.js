@@ -17,6 +17,10 @@ export default function LoginScreen({ navigation }) {
     }
   };
 
+  const handleRegister = () => {
+    navigation.navigate('Register');
+  };
+
   return (
     <ImageBackground
       source={require('../../assets/images/Plant_app_background.png')}
@@ -50,12 +54,14 @@ export default function LoginScreen({ navigation }) {
         </TouchableOpacity>
 
         {error ? <Text style={styles.noteText}>{error}</Text> : null}
+
+        <TouchableOpacity onPress={handleRegister}>
+          <Text style={styles.registerLink}>New user? Register here</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
 }
-
-
 
 const styles = StyleSheet.create({
   backgroundImage: {
@@ -112,5 +118,10 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
     color: 'black',
   },
+  registerLink: {
+    marginTop: 10,
+    color: '#577D86',
+    fontSize: 16,
+    textDecorationLine: 'underline',
+  },
 });
-

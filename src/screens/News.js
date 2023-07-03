@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   webViewContainer: {
     flex: 1,
     width: '100%',
-  },  
+  },
 });
 
 
