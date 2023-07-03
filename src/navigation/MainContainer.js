@@ -11,6 +11,7 @@ import WishList from '../screens/WishList';
 import MyPlantsForm from '../screens/MyPlantsForm';
 import LoginScreen from '../screens/LoginScreen';
 import LogoutScreen from '../screens/LogoutScreen';
+import Register from '../screens/Register';
 
 const HomePageName = 'Welcome Page';
 const AboutName = 'About';
@@ -19,6 +20,7 @@ const WishListName = 'Wish List';
 const MyPlantsFormName = 'My plants';
 const LoginScreenName = 'Login';
 const LogoutScreenName = 'Logout';
+const RegisterName = 'Register';
 
 const Tab = createBottomTabNavigator();
 
@@ -85,6 +87,20 @@ export default function MainContainer() {
               tabBarIcon: ({ focused, color, size }) => (
                 <Ionicons
                   name={focused ? 'person-circle' : 'person-circle-outline'}
+                  size={size}
+                  color={color}
+                  style={{ paddingBottom: 10 }}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name={RegisterName}
+            component={Register}
+            options={{
+              tabBarIcon: ({ focused, color, size }) => (
+                <Ionicons
+                  name={focused ? 'person-add' : 'person-add-outline'}
                   size={size}
                   color={color}
                   style={{ paddingBottom: 10 }}

@@ -1,24 +1,27 @@
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Login } from '../store/actions';
+import { Register } from '../store/actions';
 
-export default function LoginScreen({ navigation }) {
+export default function RegisterScreen({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const dispatch = useDispatch();
 
-  const onLogin = () => {
-    if (username === 'Asya' && password === '123456') {
-      dispatch(Login(username, password));
+  const onRegister = () => {
+    if (username && password && email) {
+        //mocking registration element for now 
+      setError('Registration successful');
     } else {
-      setError('Failed to login');
+      setError('Please fill in all the fields');
     }
   };
+  
 
-  const handleRegister = () => {
-    navigation.navigate('Register');
+  const handleLogin = () => {
+    navigation.navigate('Login');
   };
 
   return (
@@ -28,7 +31,7 @@ export default function LoginScreen({ navigation }) {
       imageStyle={styles.backgroundImageStyle}
     >
       <View style={styles.container}>
-        <Text style={styles.textStyle}>Log In</Text>
+        <Text style={styles.textStyle}>Register</Text>
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -49,14 +52,23 @@ export default function LoginScreen({ navigation }) {
           />
         </View>
 
-        <TouchableOpacity style={styles.addButton} onPress={onLogin}>
-          <Text style={styles.buttonText}>Login</Text>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+          />
+        </View>
+
+        <TouchableOpacity style={styles.addButton} onPress={onRegister}>
+          <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
 
         {error ? <Text style={styles.noteText}>{error}</Text> : null}
 
-        <TouchableOpacity onPress={handleRegister}>
-          <Text style={styles.registerLink}>New user? Register here</Text>
+        <TouchableOpacity onPress={handleLogin}>
+          <Text style={styles.loginLink}>Already have an account? Login here</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -118,7 +130,7 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
     color: 'black',
   },
-  registerLink: {
+  loginLink: {
     marginTop: 10,
     color: '#577D86',
     fontSize: 16,
