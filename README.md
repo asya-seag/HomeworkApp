@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This Gardening App is a project developed as part of the Code First Girls +Masters Mobile App Development course. I implemented navigation structure with most of the app isolated behind authentification, divided login/register tab from the main navigation, practiced use of hooks, used News API during development but later switched to webview.
+This Gardening App is a project developed as part of the Code First Girls +Masters Mobile App Development course. I implemented navigation structure with most of the app isolated behind authentification, divided login/register tab from the main navigation, practiced use of hooks, used News API during development but later switched to webview. Current Functionality pdf contains images of the working app.
 ## Getting Started
 
 To view and test the app on your local machine, follow these steps:
